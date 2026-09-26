@@ -104,10 +104,10 @@ it.
   "_llm": ["RaporGo report: the RaporGo app turns this JSON into a PDF.", "…"],
   "schemaVersion": "1.0",
   "template": "mavi-resmi",
-  "meta": { "title": "Q3 2026 Operations Report", "date": "September 2026", "language": "en" },
+  "meta": { "title": "Q3 2026 Operations Report", "language": "en" },
   "segments": [
     { "id": "cover", "type": "cover" },
-    { "id": "intro", "type": "paragraph", "text": "Ticket volume grew **18%** this quarter…" },
+    { "id": "intro", "type": "paragraph", "text": "Tickets grew **18%** this quarter." },
     { "id": "s1", "type": "section", "title": "Demand and resolution" },
     { "id": "tickets", "type": "chart", "chart": "column", "title": "Tickets per month",
       "data": [{ "label": "Jul", "value": 3980 }, { "label": "Aug", "value": 4120 }] }

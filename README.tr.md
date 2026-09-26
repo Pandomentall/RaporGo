@@ -94,7 +94,7 @@ bakılmaz; çıktı her makinede, CI'da ve yapay zekânın çalıştığı ortam
 
 ```jsonc
 {
-  "_llm": ["RaporGo report: the RaporGo app turns this JSON into a PDF. Edit it as plain JSON.", "…"],
+  "_llm": ["RaporGo report: the RaporGo app turns this JSON into a PDF.", "…"],
   "schemaVersion": "1.0",
   "template": "mavi-resmi",
   "meta": { "title": "Q3 2026 Operasyon Raporu", "date": "Eylül 2026", "language": "tr" },

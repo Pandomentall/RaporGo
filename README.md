@@ -59,9 +59,10 @@ changes it, the preview redraws at once. The editor never overwrites the new ver
 copy.
 
 ```
-you  > The portal grew from 22% to 61% of tickets this quarter. Add a callout after the growth paragraph.
-ai   ● Read q3-operations-report.json
-     ● Edit q3-operations-report.json   + callout "The portal took off"
+you > The portal went from 22% to 61% of tickets.
+      Add a callout after the growth paragraph.
+ai  ● Read q3-operations-report.json
+    ● Edit q3-operations-report.json  + callout "The portal took off"
 ```
 
 ![The editor after an AI edited the file on disk: the new callout is on the page](docs/screenshots/en/12-live-update.png)
@@ -76,13 +77,9 @@ There are three ways to work:
 
 ## Templates
 
-<p>
-  <img src="docs/screenshots/pages/mavi-resmi-1.png" width="19%" alt="mavi-resmi">
-  <img src="docs/screenshots/pages/sozlesme-1.png" width="19%" alt="sozlesme">
-  <img src="docs/screenshots/pages/akademik-1.png" width="19%" alt="akademik">
-  <img src="docs/screenshots/pages/bulten-1.png" width="19%" alt="bulten">
-  <img src="docs/screenshots/pages/sunum-raporu-1.png" width="19%" alt="sunum-raporu">
-</p>
+The same report, printed with each template:
+
+![The same report printed with each of the six templates](docs/screenshots/templates.png)
 
 | Template | Character |
 |---|---|

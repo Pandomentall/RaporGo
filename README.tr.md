@@ -71,13 +71,9 @@ yazmaz.
 
 ## Şablonlar
 
-<p>
-  <img src="docs/screenshots/pages/mavi-resmi-1.png" width="19%" alt="mavi-resmi">
-  <img src="docs/screenshots/pages/sozlesme-1.png" width="19%" alt="sozlesme">
-  <img src="docs/screenshots/pages/akademik-1.png" width="19%" alt="akademik">
-  <img src="docs/screenshots/pages/bulten-1.png" width="19%" alt="bulten">
-  <img src="docs/screenshots/pages/sunum-raporu-1.png" width="19%" alt="sunum-raporu">
-</p>
+Aynı rapor, her şablonla basılmış hâli:
+
+![Aynı rapor, altı şablonun her biriyle basılmış](docs/screenshots/templates.png)
 
 | Şablon | Karakter |
 |---|---|

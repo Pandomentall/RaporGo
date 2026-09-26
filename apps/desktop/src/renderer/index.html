@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <!--
+      The preview iframe uses `srcdoc`, which inherits this policy, and the
+      preview page carries an inlined Paged.js and an inlined stylesheet with
+      data: fonts — hence 'unsafe-inline' and `data:`. The part that matters is
+      kept: `default-src 'self'` still blocks every remote load, so nothing in
+      a document can reach the network.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: file:; font-src 'self' data:; frame-src 'self' data:; connect-src 'self'"
+    />
+    <title>RaporGo</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,245 @@
+{
+  "template": "mavi-resmi",
+  "meta": {
+    "title": "Q3 2026 Operations Report",
+    "subtitle": "Support, delivery and infrastructure — the quarter in review",
+    "eyebrow": "QUARTERLY REPORT",
+    "date": "September 2026",
+    "author": "Operations Team",
+    "headerText": "Operations Report",
+    "language": "en"
+  },
+  "theme": {
+    "preset": "lacivert"
+  },
+  "segments": [
+    {
+      "id": "cover",
+      "type": "cover"
+    },
+    {
+      "id": "ozet-giris",
+      "type": "paragraph",
+      "lead": true,
+      "text": "Ticket volume **grew 18%** this quarter while the average resolution time fell [from 6.1 to 4.2 hours]{success}. Both planned infrastructure migrations finished without downtime."
+    },
+    {
+      "id": "kunye",
+      "type": "keyValueTable",
+      "headers": [
+        "Metric",
+        "Q3 value"
+      ],
+      "rows": [
+        [
+          "Tickets opened",
+          "12,480"
+        ],
+        [
+          "Resolution time (avg.)",
+          "4.2 hours"
+        ],
+        [
+          "Customer satisfaction",
+          "94%"
+        ],
+        [
+          "Downtime",
+          "0 minutes"
+        ]
+      ]
+    },
+    {
+      "id": "b-talep",
+      "type": "section",
+      "title": "Demand and resolution"
+    },
+    {
+      "id": "talep-grafik",
+      "type": "chart",
+      "chart": "column",
+      "title": "Tickets per month",
+      "subtitle": "Source: help desk",
+      "data": [
+        {
+          "label": "Apr",
+          "value": 3420
+        },
+        {
+          "label": "May",
+          "value": 3610
+        },
+        {
+          "label": "Jun",
+          "value": 3530
+        },
+        {
+          "label": "Jul",
+          "value": 3980
+        },
+        {
+          "label": "Aug",
+          "value": 4120
+        },
+        {
+          "label": "Sep",
+          "value": 4380
+        }
+      ]
+    },
+    {
+      "id": "talep-yorum",
+      "type": "paragraph",
+      "text": "Most of the growth came through the new customer portal. Tickets opened there got a *first reply* in 11 minutes on average — half the time of the email channel."
+    },
+    {
+      "id": "sure-grafik",
+      "type": "chart",
+      "chart": "line",
+      "title": "Average resolution time",
+      "unit": " h",
+      "target": 4,
+      "data": [
+        {
+          "label": "Apr",
+          "value": 6.1
+        },
+        {
+          "label": "May",
+          "value": 5.7
+        },
+        {
+          "label": "Jun",
+          "value": 5.2
+        },
+        {
+          "label": "Jul",
+          "value": 4.9
+        },
+        {
+          "label": "Aug",
+          "value": 4.5
+        },
+        {
+          "label": "Sep",
+          "value": 4.2
+        }
+      ]
+    },
+    {
+      "id": "uyari",
+      "type": "callout",
+      "variant": "warning",
+      "title": "Heads-up",
+      "text": "The campaign season starts in October and volume is expected to rise another **25%**. The shift plan has been updated for it."
+    },
+    {
+      "id": "b-surec",
+      "type": "section",
+      "title": "The new ticket flow"
+    },
+    {
+      "id": "akis",
+      "type": "steps",
+      "items": [
+        {
+          "title": "A ticket is opened",
+          "desc": "Portal, email or phone — all land in one queue."
+        },
+        {
+          "title": "Automatic triage",
+          "desc": "Routed to the right team by topic and priority."
+        },
+        {
+          "title": "Resolved and confirmed",
+          "desc": "Closed on customer confirmation, followed by a short survey."
+        }
+      ]
+    },
+    {
+      "id": "b-ekip",
+      "type": "section",
+      "title": "By team"
+    },
+    {
+      "id": "ekip-grafik",
+      "type": "chart",
+      "chart": "bar",
+      "title": "Tickets resolved",
+      "data": [
+        {
+          "label": "Billing",
+          "value": 4210
+        },
+        {
+          "label": "Technical support",
+          "value": 3890
+        },
+        {
+          "label": "Account management",
+          "value": 2460
+        },
+        {
+          "label": "Integrations",
+          "value": 1520
+        }
+      ]
+    },
+    {
+      "id": "tablo",
+      "type": "table",
+      "columns": [
+        {
+          "label": "Team"
+        },
+        {
+          "label": "People",
+          "align": "right"
+        },
+        {
+          "label": "Tickets / person",
+          "align": "right"
+        },
+        {
+          "label": "CSAT",
+          "align": "right"
+        }
+      ],
+      "rows": [
+        [
+          "Billing",
+          "9",
+          "468",
+          "95%"
+        ],
+        [
+          "Technical support",
+          "11",
+          "354",
+          "92%"
+        ],
+        [
+          "Account management",
+          "6",
+          "410",
+          "96%"
+        ],
+        [
+          "Integrations",
+          "4",
+          "380",
+          "93%"
+        ]
+      ]
+    },
+    {
+      "id": "sonraki",
+      "type": "list",
+      "items": [
+        "Bring the portal to the mobile app",
+        "Add two people to the night shift",
+        "Push automatic triage accuracy above 90%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+[
+  {
+    "page": 1,
+    "id": "cover",
+    "type": "cover",
+    "x": 42.49,
+    "y": 51,
+    "width": 510.27,
+    "height": 160.36
+  },
+  {
+    "page": 1,
+    "id": "ozet-giris",
+    "type": "paragraph",
+    "x": 42.49,
+    "y": 229.36,
+    "width": 510.27,
+    "height": 30.02
+  },
+  {
+    "page": 1,
+    "id": "kunye",
+    "type": "keyValueTable",
+    "x": 42.49,
+    "y": 270.38,
+    "width": 510.27,
+    "height": 123.22
+  },
+  {
+    "page": 1,
+    "id": "b-talep",
+    "type": "section",
+    "x": 42.49,
+    "y": 411.6,
+    "width": 510.27,
+    "height": 35.74
+  },
+  {
+    "page": 1,
+    "id": "talep-grafik",
+    "type": "chart",
+    "x": 42.49,
+    "y": 458.33,
+    "width": 510.27,
+    "height": 202.41
+  },
+  {
+    "page": 1,
+    "id": "talep-yorum",
+    "type": "paragraph",
+    "x": 42.49,
+    "y": 671.73,
+    "width": 510.27,
+    "height": 30.02
+  },
+  {
+    "page": 2,
+    "id": "sure-grafik",
+    "type": "chart",
+    "x": 42.49,
+    "y": 51,
+    "width": 510.27,
+    "height": 183.4
+  },
+  {
+    "page": 2,
+    "id": "uyari",
+    "type": "callout",
+    "x": 42.49,
+    "y": 245.39,
+    "width": 510.27,
+    "height": 42.61
+  },
+  {
+    "page": 2,
+    "id": "b-surec",
+    "type": "section",
+    "x": 42.49,
+    "y": 306,
+    "width": 510.27,
+    "height": 35.74
+  },
+  {
+    "page": 2,
+    "id": "akis",
+    "type": "steps",
+    "x": 42.49,
+    "y": 352.73,
+    "width": 510.27,
+    "height": 119.99
+  },
+  {
+    "page": 2,
+    "id": "b-ekip",
+    "type": "section",
+    "x": 42.49,
+    "y": 490.72,
+    "width": 510.27,
+    "height": 35.74
+  },
+  {
+    "page": 2,
+    "id": "ekip-grafik",
+    "type": "chart",
+    "x": 42.49,
+    "y": 537.46,
+    "width": 510.27,
+    "height": 150.8
+  },
+  {
+    "page": 2,
+    "id": "tablo",
+    "type": "table",
+    "x": 42.49,
+    "y": 699.25,
+    "width": 510.27,
+    "height": 74.52
+  },
+  {
+    "page": 3,
+    "id": "tablo",
+    "type": "table",
+    "x": 42.49,
+    "y": 51,
+    "width": 510.27,
+    "height": 49.45
+  },
+  {
+    "page": 3,
+    "id": "sonraki",
+    "type": "list",
+    "x": 42.49,
+    "y": 111.45,
+    "width": 510.27,
+    "height": 49.02
+  }
+]

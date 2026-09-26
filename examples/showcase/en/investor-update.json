@@ -1,0 +1,53 @@
+{
+  "template": "sunum-raporu",
+  "meta": {
+    "title": "Investor Update",
+    "subtitle": "Third quarter 2026",
+    "eyebrow": "BOARD MEETING",
+    "date": "October 2026",
+    "language": "en"
+  },
+  "theme": {
+    "preset": "lacivert"
+  },
+  "segments": [
+    {
+      "id": "cover",
+      "type": "cover"
+    },
+    {
+      "id": "s1",
+      "type": "section",
+      "title": "Growth"
+    },
+    {
+      "id": "g",
+      "type": "chart",
+      "chart": "area",
+      "title": "Monthly recurring revenue",
+      "unit": "k $",
+      "data": [
+        {
+          "label": "Jan",
+          "value": 180
+        },
+        {
+          "label": "Mar",
+          "value": 214
+        },
+        {
+          "label": "May",
+          "value": 251
+        },
+        {
+          "label": "Jul",
+          "value": 298
+        },
+        {
+          "label": "Sep",
+          "value": 342
+        }
+      ]
+    }
+  ]
+}

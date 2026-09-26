@@ -1,0 +1,35 @@
+{
+  "name": "@raporgo/render",
+  "version": "0.1.0",
+  "description": "RaporGo render hatti: dokuman -> HTML -> PDF",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./html": {
+      "types": "./dist/html.d.ts",
+      "default": "./dist/html.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "baseline": "tsx scripts/update-baseline.ts"
+  },
+  "dependencies": {
+    "@raporgo/core": "workspace:*",
+    "@raporgo/templates": "workspace:*",
+    "pagedjs": "^0.4.3",
+    "playwright": "^1.62.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0"
+  }
+}

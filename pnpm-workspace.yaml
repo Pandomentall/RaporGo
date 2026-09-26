@@ -1,0 +1,12 @@
+packages:
+  - 'packages/*'
+  - 'apps/*'
+
+# esbuild and electron ship prebuilt binaries their install scripts unpack;
+# the rest only print donation notices, so they stay unbuilt.
+allowBuilds:
+  esbuild: true
+  electron: true
+  electron-winstaller: true
+  core-js: false
+  es5-ext: false

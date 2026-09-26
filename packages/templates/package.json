@@ -1,0 +1,43 @@
+{
+  "name": "@raporgo/templates",
+  "version": "0.1.0",
+  "description": "RaporGo sablonlari: tema token'lari ve segment renderer'lari",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./inline": {
+      "types": "./dist/inline.d.ts",
+      "default": "./dist/inline.js"
+    },
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "default": "./dist/tokens.js"
+    },
+    "./labels": {
+      "types": "./dist/base/labels.d.ts",
+      "default": "./dist/base/labels.js"
+    },
+    "./catalog": {
+      "types": "./dist/catalog.d.ts",
+      "default": "./dist/catalog.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@fontsource/arimo": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/tinos": "^5.3.0",
+    "@raporgo/core": "workspace:*"
+  }
+}

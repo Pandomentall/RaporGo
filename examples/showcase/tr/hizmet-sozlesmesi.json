@@ -1,0 +1,93 @@
+{
+  "template": "sozlesme",
+  "meta": {
+    "title": "Hizmet Sözleşmesi",
+    "subtitle": "Yazılım bakım ve destek hizmeti",
+    "date": "1 Ekim 2026",
+    "language": "tr"
+  },
+  "theme": {
+    "preset": "lacivert"
+  },
+  "segments": [
+    {
+      "id": "cover",
+      "type": "cover"
+    },
+    {
+      "id": "giris",
+      "type": "paragraph",
+      "lead": true,
+      "text": "Bu sözleşme, aşağıda bilgileri bulunan taraflar arasında, yazılım bakım ve destek hizmetinin kapsamını ve koşullarını belirlemek üzere imzalanmıştır."
+    },
+    {
+      "id": "m1",
+      "type": "section",
+      "title": "Taraflar"
+    },
+    {
+      "id": "taraflar",
+      "type": "keyValueTable",
+      "rows": [
+        [
+          "Hizmet veren",
+          "Örnek Yazılım A.Ş."
+        ],
+        [
+          "Hizmet alan",
+          "Kuzey Lojistik Ltd."
+        ]
+      ]
+    },
+    {
+      "id": "m2",
+      "type": "section",
+      "title": "Konu ve kapsam"
+    },
+    {
+      "id": "m2-1",
+      "type": "subheading",
+      "text": "Bakım"
+    },
+    {
+      "id": "m2-p",
+      "type": "paragraph",
+      "text": "Hizmet veren, yazılımın güvenlik güncellemelerini ve hata düzeltmelerini sözleşme süresince sağlar."
+    },
+    {
+      "id": "m2-2",
+      "type": "subheading",
+      "text": "Destek"
+    },
+    {
+      "id": "m2-q",
+      "type": "paragraph",
+      "text": "Destek talepleri iş günlerinde 09:00–18:00 arasında yanıtlanır; kritik arızalarda ilk yanıt süresi en fazla iki saattir."
+    },
+    {
+      "id": "m3",
+      "type": "section",
+      "title": "Ücret ve ödeme"
+    },
+    {
+      "id": "m3-p",
+      "type": "paragraph",
+      "text": "Aylık hizmet bedeli fatura tarihinden itibaren 30 gün içinde ödenir."
+    },
+    {
+      "id": "imza",
+      "type": "signature",
+      "parties": [
+        {
+          "name": "Ayşe Demir",
+          "title": "Hizmet veren adına"
+        },
+        {
+          "name": "Mehmet Kaya",
+          "title": "Hizmet alan adına"
+        }
+      ],
+      "date": true
+    }
+  ]
+}

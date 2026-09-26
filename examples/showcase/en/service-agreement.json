@@ -1,0 +1,93 @@
+{
+  "template": "sozlesme",
+  "meta": {
+    "title": "Service Agreement",
+    "subtitle": "Software maintenance and support",
+    "date": "1 October 2026",
+    "language": "en"
+  },
+  "theme": {
+    "preset": "lacivert"
+  },
+  "segments": [
+    {
+      "id": "cover",
+      "type": "cover"
+    },
+    {
+      "id": "giris",
+      "type": "paragraph",
+      "lead": true,
+      "text": "This agreement is made between the parties named below to set out the scope and terms of the software maintenance and support service."
+    },
+    {
+      "id": "m1",
+      "type": "section",
+      "title": "Parties"
+    },
+    {
+      "id": "taraflar",
+      "type": "keyValueTable",
+      "rows": [
+        [
+          "Provider",
+          "Example Software Ltd."
+        ],
+        [
+          "Client",
+          "Northwind Logistics Inc."
+        ]
+      ]
+    },
+    {
+      "id": "m2",
+      "type": "section",
+      "title": "Subject and scope"
+    },
+    {
+      "id": "m2-1",
+      "type": "subheading",
+      "text": "Maintenance"
+    },
+    {
+      "id": "m2-p",
+      "type": "paragraph",
+      "text": "The provider supplies security updates and bug fixes for the software for the term of this agreement."
+    },
+    {
+      "id": "m2-2",
+      "type": "subheading",
+      "text": "Support"
+    },
+    {
+      "id": "m2-q",
+      "type": "paragraph",
+      "text": "Support requests are answered on business days between 09:00 and 18:00; for critical failures the first reply comes within two hours."
+    },
+    {
+      "id": "m3",
+      "type": "section",
+      "title": "Fees and payment"
+    },
+    {
+      "id": "m3-p",
+      "type": "paragraph",
+      "text": "The monthly fee is payable within 30 days of the invoice date."
+    },
+    {
+      "id": "imza",
+      "type": "signature",
+      "parties": [
+        {
+          "name": "Jane Morgan",
+          "title": "For the provider"
+        },
+        {
+          "name": "Daniel Reed",
+          "title": "For the client"
+        }
+      ],
+      "date": true
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      # The desktop app is typechecked but not launched here, so there is no
+      # reason to pull down a 100 MB Electron binary.
+      - run: pnpm install --frozen-lockfile
+        env:
+          ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+
+      # The tests render real PDFs, so the browser has to be present.
+      - run: pnpm --filter @raporgo/render exec playwright install --with-deps chromium
+
+      - run: pnpm build
+
+      - run: pnpm typecheck
+
+      # Includes the layout suite: the showcase report is rendered and compared
+      # to the committed baseline of every segment box.
+      - run: pnpm test
+
+      - name: Render the example end to end
+        run: node packages/cli/dist/bin.js render examples/showcase/en/q3-operations-report.json -o /tmp/report.pdf
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: example-report
+          path: /tmp/report.pdf

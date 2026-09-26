@@ -1,0 +1,245 @@
+{
+  "template": "mavi-resmi",
+  "meta": {
+    "title": "2026 Q3 Operasyon Raporu",
+    "subtitle": "Destek, teslimat ve altyapı — üç ayın özeti",
+    "eyebrow": "ÇEYREK RAPORU",
+    "date": "Eylül 2026",
+    "author": "Operasyon Ekibi",
+    "headerText": "Operasyon Raporu",
+    "language": "tr"
+  },
+  "theme": {
+    "preset": "lacivert"
+  },
+  "segments": [
+    {
+      "id": "cover",
+      "type": "cover"
+    },
+    {
+      "id": "ozet-giris",
+      "type": "paragraph",
+      "lead": true,
+      "text": "Bu çeyrekte talep hacmi **%18 arttı**, ortalama çözüm süresi ise [6,1 saatten 4,2 saate]{success} indi. Altyapı tarafında planlı iki geçiş kesintisiz tamamlandı."
+    },
+    {
+      "id": "kunye",
+      "type": "keyValueTable",
+      "headers": [
+        "Gösterge",
+        "Q3 değeri"
+      ],
+      "rows": [
+        [
+          "Açılan talep",
+          "12.480"
+        ],
+        [
+          "Çözüm süresi (ort.)",
+          "4,2 saat"
+        ],
+        [
+          "Müşteri memnuniyeti",
+          "%94"
+        ],
+        [
+          "Kesinti",
+          "0 dakika"
+        ]
+      ]
+    },
+    {
+      "id": "b-talep",
+      "type": "section",
+      "title": "Talep ve çözüm"
+    },
+    {
+      "id": "talep-grafik",
+      "type": "chart",
+      "chart": "column",
+      "title": "Aylık talep",
+      "subtitle": "Kaynak: destek masası",
+      "data": [
+        {
+          "label": "Nis",
+          "value": 3420
+        },
+        {
+          "label": "May",
+          "value": 3610
+        },
+        {
+          "label": "Haz",
+          "value": 3530
+        },
+        {
+          "label": "Tem",
+          "value": 3980
+        },
+        {
+          "label": "Ağu",
+          "value": 4120
+        },
+        {
+          "label": "Eyl",
+          "value": 4380
+        }
+      ]
+    },
+    {
+      "id": "talep-yorum",
+      "type": "paragraph",
+      "text": "Artışın büyük kısmı yeni müşteri portalından geliyor. Portal üzerinden açılan talepler *ilk yanıtı* ortalama 11 dakikada aldı; bu, e-posta kanalının yarısı."
+    },
+    {
+      "id": "sure-grafik",
+      "type": "chart",
+      "chart": "line",
+      "title": "Ortalama çözüm süresi",
+      "unit": " sa",
+      "target": 4,
+      "data": [
+        {
+          "label": "Nis",
+          "value": 6.1
+        },
+        {
+          "label": "May",
+          "value": 5.7
+        },
+        {
+          "label": "Haz",
+          "value": 5.2
+        },
+        {
+          "label": "Tem",
+          "value": 4.9
+        },
+        {
+          "label": "Ağu",
+          "value": 4.5
+        },
+        {
+          "label": "Eyl",
+          "value": 4.2
+        }
+      ]
+    },
+    {
+      "id": "uyari",
+      "type": "callout",
+      "variant": "warning",
+      "title": "Dikkat",
+      "text": "Ekim ayında kampanya dönemi başlıyor; talep hacminin **%25** daha artması bekleniyor. Vardiya planı buna göre güncellendi."
+    },
+    {
+      "id": "b-surec",
+      "type": "section",
+      "title": "Yeni talep akışı"
+    },
+    {
+      "id": "akis",
+      "type": "steps",
+      "items": [
+        {
+          "title": "Talep açılır",
+          "desc": "Portal, e-posta ya da telefon; hepsi tek kuyruğa düşer."
+        },
+        {
+          "title": "Otomatik sınıflama",
+          "desc": "Konu ve önceliğe göre doğru ekibe yönlendirilir."
+        },
+        {
+          "title": "Çözüm ve onay",
+          "desc": "Müşteri onayıyla kapanır, memnuniyet anketi gider."
+        }
+      ]
+    },
+    {
+      "id": "b-ekip",
+      "type": "section",
+      "title": "Ekiplere göre dağılım"
+    },
+    {
+      "id": "ekip-grafik",
+      "type": "chart",
+      "chart": "bar",
+      "title": "Çözülen talep",
+      "data": [
+        {
+          "label": "Faturalama",
+          "value": 4210
+        },
+        {
+          "label": "Teknik destek",
+          "value": 3890
+        },
+        {
+          "label": "Hesap yönetimi",
+          "value": 2460
+        },
+        {
+          "label": "Entegrasyonlar",
+          "value": 1520
+        }
+      ]
+    },
+    {
+      "id": "tablo",
+      "type": "table",
+      "columns": [
+        {
+          "label": "Ekip"
+        },
+        {
+          "label": "Kişi",
+          "align": "right"
+        },
+        {
+          "label": "Talep / kişi",
+          "align": "right"
+        },
+        {
+          "label": "Memnuniyet",
+          "align": "right"
+        }
+      ],
+      "rows": [
+        [
+          "Faturalama",
+          "9",
+          "468",
+          "%95"
+        ],
+        [
+          "Teknik destek",
+          "11",
+          "354",
+          "%92"
+        ],
+        [
+          "Hesap yönetimi",
+          "6",
+          "410",
+          "%96"
+        ],
+        [
+          "Entegrasyonlar",
+          "4",
+          "380",
+          "%93"
+        ]
+      ]
+    },
+    {
+      "id": "sonraki",
+      "type": "list",
+      "items": [
+        "Portalı mobil uygulamaya taşımak",
+        "Gece vardiyasına iki kişi eklemek",
+        "Otomatik sınıflamanın doğruluğunu %90’ın üstüne çıkarmak"
+      ]
+    }
+  ]
+}

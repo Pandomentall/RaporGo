@@ -1,0 +1,34 @@
+{
+  "template": "akademik",
+  "meta": {
+    "title": "Uzaktan Çalışmanın Verimliliğe Etkisi",
+    "author": "E. Aygün",
+    "date": "2026",
+    "language": "tr"
+  },
+  "theme": {
+    "preset": "lacivert"
+  },
+  "segments": [
+    {
+      "id": "cover",
+      "type": "cover"
+    },
+    {
+      "id": "ozet",
+      "type": "paragraph",
+      "lead": true,
+      "text": "Bu çalışma, 42 yazılım ekibinin iki yıllık verisiyle uzaktan çalışmanın teslim hızına etkisini inceliyor."
+    },
+    {
+      "id": "s1",
+      "type": "section",
+      "title": "Yöntem"
+    },
+    {
+      "id": "p1",
+      "type": "paragraph",
+      "text": "Ekipler karma, tamamen uzaktan ve ofiste olmak üzere üç gruba ayrıldı."
+    }
+  ]
+}

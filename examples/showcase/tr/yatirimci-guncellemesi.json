@@ -1,0 +1,53 @@
+{
+  "template": "sunum-raporu",
+  "meta": {
+    "title": "Yatırımcı Güncellemesi",
+    "subtitle": "2026 üçüncü çeyrek",
+    "eyebrow": "YÖNETİM KURULU",
+    "date": "Ekim 2026",
+    "language": "tr"
+  },
+  "theme": {
+    "preset": "lacivert"
+  },
+  "segments": [
+    {
+      "id": "cover",
+      "type": "cover"
+    },
+    {
+      "id": "s1",
+      "type": "section",
+      "title": "Büyüme"
+    },
+    {
+      "id": "g",
+      "type": "chart",
+      "chart": "area",
+      "title": "Aylık yinelenen gelir",
+      "unit": " bin ₺",
+      "data": [
+        {
+          "label": "Oca",
+          "value": 180
+        },
+        {
+          "label": "Mar",
+          "value": 214
+        },
+        {
+          "label": "May",
+          "value": 251
+        },
+        {
+          "label": "Tem",
+          "value": 298
+        },
+        {
+          "label": "Eyl",
+          "value": 342
+        }
+      ]
+    }
+  ]
+}

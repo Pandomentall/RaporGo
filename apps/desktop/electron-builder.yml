@@ -1,0 +1,28 @@
+appId: dev.raporgo.desktop
+productName: RaporGo
+copyright: Copyright © 2026 Ender Aygün
+directories:
+  output: release
+  buildResources: build
+# The editor imports only `@raporgo/render/html` and prints through Electron
+# (src/main/pdf.ts); Playwright is the CLI's and never loads in the app.
+files:
+  - out/**
+  - package.json
+  - '!**/node_modules/playwright/**'
+  - '!**/node_modules/playwright-core/**'
+# Chromium's own UI strings (context menus, dialogs) for the app's ten languages only.
+electronLanguages: [tr, en-US, es, de, fr, pt-BR, it, ru, zh-CN, ja]
+# build/icon-v2.png (1024px) is converted to the .ico Windows needs.
+win:
+  icon: icon-v2.png
+  target:
+    - nsis
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  shortcutName: RaporGo
+  artifactName: RaporGo-Setup-${version}.${ext}
+# No fileAssociations on purpose: registering ".json" would make RaporGo the
+# handler for every JSON file on the machine. "Open with" still works — the
+# path arrives on the command line and opens in the running window.

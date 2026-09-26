@@ -1,0 +1,17 @@
+{
+  "name": "raporgo",
+  "version": "0.1.0",
+  "description": "RaporGo komut satiri arayuzu — LLM'ler ve betikler icin",
+  "license": "MIT",
+  "type": "module",
+  "bin": { "raporgo": "./dist/bin.js" },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": { "build": "tsc -p tsconfig.json" },
+  "dependencies": {
+    "@raporgo/core": "workspace:*",
+    "@raporgo/render": "workspace:*",
+    "@raporgo/templates": "workspace:*"
+  }
+}

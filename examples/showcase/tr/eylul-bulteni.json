@@ -1,0 +1,35 @@
+{
+  "template": "bulten",
+  "meta": {
+    "title": "Eylül Bülteni",
+    "subtitle": "Ekipten haberler",
+    "eyebrow": "SAYI 9",
+    "date": "Eylül 2026",
+    "language": "tr"
+  },
+  "theme": {
+    "preset": "kiremit"
+  },
+  "segments": [
+    {
+      "id": "cover",
+      "type": "cover"
+    },
+    {
+      "id": "s",
+      "type": "section",
+      "title": "Yeni ofis"
+    },
+    {
+      "id": "p",
+      "type": "paragraph",
+      "text": "Ekim başında yeni ofisimize taşınıyoruz. Toplantı odaları üç katına çıkıyor, sessiz çalışma alanı da nihayet geliyor."
+    },
+    {
+      "id": "c",
+      "type": "callout",
+      "variant": "note",
+      "text": "“Taşınma haftasında toplantıları çevrim içi yapalım.”"
+    }
+  ]
+}

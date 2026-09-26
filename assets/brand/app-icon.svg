@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">RaporGo uygulama ikonu</title>
+  <desc id="desc">Lacivert zemin üzerinde segmentleri içine alan beyaz rapor sayfası.</desc>
+  <rect x="32" y="32" width="960" height="960" rx="224" fill="#1B2A4A"/>
+  <path fill="#FFF" d="M310 188h274l130 130v494c0 34-28 62-62 62H310c-34 0-62-28-62-62V250c0-34 28-62 62-62Z"/>
+  <path fill="#F0A500" d="M584 188v102c0 16 12 28 28 28h102L584 188Z"/>
+  <path fill="#1B2A4A" d="M358 410h256a30 30 0 1 1 0 60H358a30 30 0 1 1 0-60Zm0 116h204a30 30 0 1 1 0 60H358a30 30 0 1 1 0-60Zm0 116h142a30 30 0 1 1 0 60H358a30 30 0 1 1 0-60Z"/>
+  <path fill="#F0A500" d="M176 410h182v60H176a30 30 0 1 1 0-60Zm42 116h140v60H218a30 30 0 1 1 0-60Zm70 116h70v60h-70a30 30 0 1 1 0-60Z"/>
+</svg>

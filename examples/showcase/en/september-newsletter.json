@@ -1,0 +1,35 @@
+{
+  "template": "bulten",
+  "meta": {
+    "title": "September Newsletter",
+    "subtitle": "News from the team",
+    "eyebrow": "ISSUE 9",
+    "date": "September 2026",
+    "language": "en"
+  },
+  "theme": {
+    "preset": "kiremit"
+  },
+  "segments": [
+    {
+      "id": "cover",
+      "type": "cover"
+    },
+    {
+      "id": "s",
+      "type": "section",
+      "title": "A new office"
+    },
+    {
+      "id": "p",
+      "type": "paragraph",
+      "text": "We move into the new office in early October. Meeting rooms triple, and a quiet working area finally arrives."
+    },
+    {
+      "id": "c",
+      "type": "callout",
+      "variant": "note",
+      "text": "“Let us keep meetings online during moving week.”"
+    }
+  ]
+}

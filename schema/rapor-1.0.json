@@ -1,0 +1,771 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raporgo.dev/schema/rapor-1.0.json",
+  "title": "RaporGo document",
+  "description": "A RaporGo report: metadata, a theme and an ordered list of segments. The file is the single source of truth — the desktop editor, the raporgo CLI and any LLM all read and write this same document.",
+  "type": "object",
+  "properties": {
+    "_llm": {
+      "description": "Guide for LLMs editing this file; RaporGo rewrites it on every save and ignores it on read",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "schemaVersion": {
+      "default": "1.0",
+      "type": "string",
+      "const": "1.0"
+    },
+    "template": {
+      "default": "mavi-resmi",
+      "type": "string"
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "description": "Small uppercase label on the cover",
+          "type": "string"
+        },
+        "date": {
+          "description": "Free text; shown in the running header",
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "headerText": {
+          "description": "Running header, left side. Defaults to meta.eyebrow",
+          "type": "string"
+        },
+        "footerText": {
+          "description": "Running footer, left side. Defaults to meta.title",
+          "type": "string"
+        },
+        "language": {
+          "default": "tr",
+          "description": "BCP 47 tag, drives hyphenation and locale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title"
+      ]
+    },
+    "theme": {
+      "type": "object",
+      "properties": {
+        "preset": {
+          "default": "lacivert",
+          "description": "Named palette shipped with the template",
+          "type": "string"
+        },
+        "overrides": {
+          "description": "Per-token colour overrides, e.g. { \"accent\": \"#f0a500\" }",
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
+          }
+        }
+      }
+    },
+    "segments": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+                "description": "Stable identifier used to address this segment from the CLI, the editor and an LLM"
+              },
+              "note": {
+                "description": "Editorial note, never rendered into the PDF",
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "cover"
+              },
+              "eyebrow": {
+                "description": "Small uppercase label above the title; defaults to meta.eyebrow",
+                "type": "string"
+              },
+              "title": {
+                "description": "Defaults to meta.title",
+                "type": "string"
+              },
+              "subtitle": {
+                "description": "Defaults to meta.subtitle",
+                "type": "string"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+                "description": "Stable identifier used to address this segment from the CLI, the editor and an LLM"
+              },
+              "note": {
+                "description": "Editorial note, never rendered into the PDF",
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "section"
+              },
+              "title": {
+                "type": "string"
+              },
+              "number": {
+                "description": "Badge number. Omit to let RaporGo number sections sequentially at render time",
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "type",
+              "title"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+                "description": "Stable identifier used to address this segment from the CLI, the editor and an LLM"
+              },
+              "note": {
+                "description": "Editorial note, never rendered into the PDF",
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "subheading"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "text"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+                "description": "Stable identifier used to address this segment from the CLI, the editor and an LLM"
+              },
+              "note": {
+                "description": "Editorial note, never rendered into the PDF",
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "paragraph"
+              },
+              "text": {
+                "type": "string",
+                "description": "Inline markup allowed: **bold**, *italic*, `code`, [label](url), [text]{colour} where colour is a palette role (primary, accent, danger, success, info, note, muted) or a hex"
+              },
+              "align": {
+                "type": "string",
+                "enum": [
+                  "left",
+                  "center",
+                  "right"
+                ]
+              },
+              "lead": {
+                "description": "Renders slightly larger, for an opening paragraph",
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "type",
+              "text"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+                "description": "Stable identifier used to address this segment from the CLI, the editor and an LLM"
+              },
+              "note": {
+                "description": "Editorial note, never rendered into the PDF",
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "keyValueTable"
+              },
+              "headers": {
+                "description": "Header row labels, e.g. [\"Baslik\", \"Deger\"]. Omit for a headerless table",
+                "type": "array",
+                "prefixItems": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              },
+              "rows": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "prefixItems": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string",
+                      "description": "Inline markup allowed: **bold**, *italic*, `code`, [label](url), [text]{colour} where colour is a palette role (primary, accent, danger, success, info, note, muted) or a hex"
+                    }
+                  ]
+                },
+                "description": "[key, value] pairs, one per row"
+              }
+            },
+            "required": [
+              "type",
+              "rows"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+                "description": "Stable identifier used to address this segment from the CLI, the editor and an LLM"
+              },
+              "note": {
+                "description": "Editorial note, never rendered into the PDF",
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "table"
+              },
+              "columns": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "description": "CSS width such as \"30%\" or \"120pt\"",
+                      "type": "string"
+                    },
+                    "mono": {
+                      "description": "Render this column in the monospace face",
+                      "type": "boolean"
+                    },
+                    "align": {
+                      "type": "string",
+                      "enum": [
+                        "left",
+                        "center",
+                        "right"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "label"
+                  ]
+                }
+              },
+              "rows": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "description": "Inline markup allowed: **bold**, *italic*, `code`, [label](url), [text]{colour} where colour is a palette role (primary, accent, danger, success, info, note, muted) or a hex"
+                  }
+                },
+                "description": "Each row must have as many cells as there are columns"
+              }
+            },
+            "required": [
+              "type",
+              "columns",
+              "rows"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+                "description": "Stable identifier used to address this segment from the CLI, the editor and an LLM"
+              },
+              "note": {
+                "description": "Editorial note, never rendered into the PDF",
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "steps"
+              },
+              "items": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "desc": {
+                      "type": "string",
+                      "description": "Inline markup allowed: **bold**, *italic*, `code`, [label](url), [text]{colour} where colour is a palette role (primary, accent, danger, success, info, note, muted) or a hex"
+                    }
+                  },
+                  "required": [
+                    "title"
+                  ]
+                }
+              },
+              "start": {
+                "description": "First step number, defaults to 1",
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "type",
+              "items"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+                "description": "Stable identifier used to address this segment from the CLI, the editor and an LLM"
+              },
+              "note": {
+                "description": "Editorial note, never rendered into the PDF",
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "callout"
+              },
+              "variant": {
+                "default": "info",
+                "type": "string",
+                "enum": [
+                  "info",
+                  "warning",
+                  "success",
+                  "danger",
+                  "note"
+                ]
+              },
+              "title": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string",
+                "description": "Inline markup allowed: **bold**, *italic*, `code`, [label](url), [text]{colour} where colour is a palette role (primary, accent, danger, success, info, note, muted) or a hex"
+              }
+            },
+            "required": [
+              "type",
+              "text"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+                "description": "Stable identifier used to address this segment from the CLI, the editor and an LLM"
+              },
+              "note": {
+                "description": "Editorial note, never rendered into the PDF",
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "chart"
+              },
+              "chart": {
+                "default": "bar",
+                "type": "string",
+                "enum": [
+                  "bar",
+                  "column",
+                  "stackedBar",
+                  "waterfall",
+                  "line",
+                  "area",
+                  "scatter",
+                  "pie",
+                  "donut",
+                  "gauge",
+                  "radar"
+                ]
+              },
+              "title": {
+                "type": "string"
+              },
+              "subtitle": {
+                "description": "Small line under the title, usually the data source",
+                "type": "string"
+              },
+              "caption": {
+                "description": "Caption below the chart, like an image caption",
+                "type": "string"
+              },
+              "unit": {
+                "description": "Appended to every value, e.g. \"%\" or \" GB\"",
+                "type": "string"
+              },
+              "scale": {
+                "default": "linear",
+                "type": "string",
+                "enum": [
+                  "linear",
+                  "log"
+                ]
+              },
+              "max": {
+                "description": "Axis maximum; inferred from the data when omitted",
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "marker": {
+                "description": "Line and area charts: a vertical rule at the point with this label",
+                "type": "object",
+                "properties": {
+                  "at": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "at",
+                  "label"
+                ]
+              },
+              "target": {
+                "description": "Gauge charts: the goal marked on the arc",
+                "type": "number"
+              },
+              "series": {
+                "description": "Names the stacks of a stackedBar or the rings of a radar; each datum then uses `values`",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "color": {
+                      "type": "string",
+                      "description": "Palette token (primary, primaryAlt, accent, info, success, danger, note, muted) or a hex value"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ]
+                }
+              },
+              "data": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "description": "Category name, or the x value for a line chart"
+                    },
+                    "value": {
+                      "description": "Single-series charts. Omit when using `values`",
+                      "type": "number"
+                    },
+                    "values": {
+                      "description": "One number per entry in `series`, for stackedBar and radar",
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    "x": {
+                      "description": "Scatter charts: the horizontal value",
+                      "type": "number"
+                    },
+                    "color": {
+                      "type": "string",
+                      "description": "Palette token (primary, primaryAlt, accent, info, success, danger, note, muted) or a hex value"
+                    },
+                    "text": {
+                      "description": "Shown instead of the formatted value, e.g. \"8,8 trilyon $\"",
+                      "type": "string"
+                    },
+                    "note": {
+                      "description": "Small caption under the label",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "label"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "type",
+              "data"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+                "description": "Stable identifier used to address this segment from the CLI, the editor and an LLM"
+              },
+              "note": {
+                "description": "Editorial note, never rendered into the PDF",
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "image"
+              },
+              "src": {
+                "type": "string",
+                "description": "Path relative to the document file, conventionally under assets/. Data URIs are not allowed"
+              },
+              "caption": {
+                "type": "string",
+                "description": "Inline markup allowed: **bold**, *italic*, `code`, [label](url), [text]{colour} where colour is a palette role (primary, accent, danger, success, info, note, muted) or a hex"
+              },
+              "width": {
+                "description": "CSS width such as \"100%\" or \"420pt\"",
+                "type": "string"
+              },
+              "border": {
+                "description": "Draw a hairline frame around the image, defaults to true",
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "type",
+              "src"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+                "description": "Stable identifier used to address this segment from the CLI, the editor and an LLM"
+              },
+              "note": {
+                "description": "Editorial note, never rendered into the PDF",
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "code"
+              },
+              "language": {
+                "description": "Label only; RaporGo does not syntax-highlight in v1",
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "content"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+                "description": "Stable identifier used to address this segment from the CLI, the editor and an LLM"
+              },
+              "note": {
+                "description": "Editorial note, never rendered into the PDF",
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "list"
+              },
+              "ordered": {
+                "type": "boolean"
+              },
+              "items": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "description": "Inline markup allowed: **bold**, *italic*, `code`, [label](url), [text]{colour} where colour is a palette role (primary, accent, danger, success, info, note, muted) or a hex"
+                }
+              }
+            },
+            "required": [
+              "type",
+              "items"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+                "description": "Stable identifier used to address this segment from the CLI, the editor and an LLM"
+              },
+              "note": {
+                "description": "Editorial note, never rendered into the PDF",
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "signature"
+              },
+              "parties": {
+                "minItems": 1,
+                "maxItems": 4,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "Who signs: a person or an organisation"
+                    },
+                    "title": {
+                      "description": "Role or capacity, printed under the name",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ]
+                }
+              },
+              "date": {
+                "description": "Add a blank date line under the signatures",
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "type",
+              "parties"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+                "description": "Stable identifier used to address this segment from the CLI, the editor and an LLM"
+              },
+              "note": {
+                "description": "Editorial note, never rendered into the PDF",
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "pageBreak"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+                "description": "Stable identifier used to address this segment from the CLI, the editor and an LLM"
+              },
+              "note": {
+                "description": "Editorial note, never rendered into the PDF",
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "spacer"
+              },
+              "size": {
+                "default": "md",
+                "type": "string",
+                "enum": [
+                  "sm",
+                  "md",
+                  "lg"
+                ]
+              }
+            },
+            "required": [
+              "type"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "meta"
+  ]
+}

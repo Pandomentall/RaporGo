@@ -1,0 +1,34 @@
+{
+  "template": "akademik",
+  "meta": {
+    "title": "The Effect of Remote Work on Productivity",
+    "author": "E. Aygün",
+    "date": "2026",
+    "language": "en"
+  },
+  "theme": {
+    "preset": "lacivert"
+  },
+  "segments": [
+    {
+      "id": "cover",
+      "type": "cover"
+    },
+    {
+      "id": "ozet",
+      "type": "paragraph",
+      "lead": true,
+      "text": "This study examines how remote work affects delivery speed, using two years of data from 42 software teams."
+    },
+    {
+      "id": "s1",
+      "type": "section",
+      "title": "Method"
+    },
+    {
+      "id": "p1",
+      "type": "paragraph",
+      "text": "Teams were grouped as hybrid, fully remote and on-site."
+    }
+  ]
+}

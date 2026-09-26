@@ -1,0 +1,27 @@
+{
+  "name": "raporgo-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "RaporGo — LLM tarafindan okunup duzenlenebilen, segment tabanli PDF rapor olusturucu",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@11.18.0",
+  "scripts": {
+    "preinstall": "node scripts/require-pnpm.mjs",
+    "dev": "npm --prefix apps/desktop run dev",
+    "build": "pnpm -r --filter \"./packages/*\" build",
+    "typecheck": "pnpm -r exec tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "schema": "npm --prefix packages/core run schema",
+    "render": "node packages/cli/dist/bin.js render"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.0"
+  }
+}
